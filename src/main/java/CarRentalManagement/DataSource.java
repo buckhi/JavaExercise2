@@ -1,6 +1,11 @@
 package CarRentalManagement;
 
+import javax.swing.plaf.nimbus.State;
+import java.io.File;
+import java.io.FileWriter;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataSource {
     public static final String DB_NAME = "car_rental.db";
@@ -26,34 +31,22 @@ public class DataSource {
     private Connection connection;
     private PreparedStatement queryRentalInfo;
 
-//    public boolean open() {
-//        try {
-//            connection = DriverManager.getConnection(CONNECTION_STRING);
-//            queryRentalInfo = connection.prepareStatement(QUERY_RENTAL_INFO);
-//            return true;
-//        } catch (SQLException exception) {
-//            System.out.println("couldn't connect to the data base " + exception.getMessage());
-//            return false;
-//        }
-//    }
-//
-//    public void close() {
-//        try {
-//            if (queryRentalInfo != null) {
-//                queryRentalInfo.close();
-//            }
-//        } catch (SQLException exception) {
-//            System.out.println("couldn't close connection " + exception.getMessage());
-//        }
-//    }
-
 
     public static void insertRental(Statement statement, String name, String startDate, String endDate, String ID) throws SQLException {
         statement.execute("insert into " + RENTAL_TABLE + " (" + CLIENT_NAME + ", " +
                 START_DATE + ", " + END_DATE + ", " + ID_CODE + ") " +
-                "values('" + name + "', '" + startDate + "', '" + endDate + "', '" + ID +"')");
+                "values('" + name + "', '" + startDate + "', '" + endDate + "', '" + ID + "')");
 
     }
+
+    public static void insertVehicle(Statement statement, String ID, String brand, String model, int seat, String licenePlate) throws SQLException {
+        statement.execute("insert into " + TABLE_CAR + " (" + ID + ", " + BRAND + ", " + MODEL + ", " + SEAT_NUMBER +
+                ", " + LICENSE_PLATE + ") " + "values('" + ID + "', '" + brand + "', '" + model + "', '" + seat + "', '" + licenePlate +
+                "')");
+    }
+
+
+
 
 
 }
