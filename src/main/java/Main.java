@@ -1,4 +1,7 @@
 import CarRentalManagement.DataSource;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import javax.xml.crypto.Data;
 import java.io.File;
@@ -92,9 +95,9 @@ public class Main extends DataSource {
                 break;
 
             case 6:
-//                HSSFWorkbook wb = new HSSFWorkbook();
-//                HSSFSheet sheet = wb.createSheet("Excel Sheet");
-//                HSSFRow rowhead = sheet.createRow((short) 0);
+                HSSFWorkbook wb = new HSSFWorkbook();
+                HSSFSheet sheet = wb.createSheet("Excel Sheet");
+                HSSFRow rowHead = sheet.createRow((short) 0);
                 break;
             case 7:
                 break;
