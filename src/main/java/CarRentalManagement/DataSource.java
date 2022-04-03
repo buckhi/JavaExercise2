@@ -9,21 +9,24 @@ import java.util.List;
 
 public class DataSource {
     public static final String DB_NAME = "car_rental.db";
-    public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\nbhai\\Desktop\\projects\\NguyenBacHaiExercise2\\" + DB_NAME;
+//    public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\nbhai\\Desktop\\projects\\NguyenBacHaiExercise2\\" + DB_NAME;
+        public static final String CONNECTION_STRING = "jdbc:sqlite:/Users/machouse/IdeaProjects/JavaExercise2" + DB_NAME;
 
-    public static final String START_DATE = "startDate";
-    public static final String END_DATE = "endDate";
+    public static final String RENTAL_TABLE = "RentalManagement";
+    public static final String ORDER_NUMBER = "Number";
+    public static final String CLIENT_NAME = "Fullname";
+    public static final String START_DATE = "StartDate";
+    public static final String END_DATE = "EndDate";
+    public static final String ID_CODE1 = "IDC";
+
 
     public static final String TABLE_CAR = "car_rental";
     public static final String ID_CODE = "ID";
-    public static final String ID_CODE1 = "IDC";
     public static final String BRAND = "Brand";
     public static final String MODEL = "Model";
     public static final String SEAT_NUMBER = "Seat";
     public static final String LICENSE_PLATE = "Plate";
 
-    public static final String RENTAL_TABLE = "rentalManagement";
-    public static final String CLIENT_NAME = "fullname";
 
     public static final String QUERY_RENTAL_INFO = "select " + TABLE_CAR + "." + ID_CODE + " from " + TABLE_CAR + " inner join " +
             RENTAL_TABLE + " on " + TABLE_CAR + "." + ID_CODE + " = " + RENTAL_TABLE + "." + ID_CODE1 + ";";
@@ -44,6 +47,8 @@ public class DataSource {
                 ", " + LICENSE_PLATE + ") " + "values('" + ID + "', '" + brand + "', '" + model + "', '" + seat + "', '" + licenePlate +
                 "')");
     }
+
+
 
 
 
