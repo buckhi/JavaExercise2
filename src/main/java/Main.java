@@ -133,6 +133,17 @@ public class Main extends DataSource {
 
 
                 break;
+                case 8:
+                String printRemainders = "select * from " + TABLE_CAR + " left join " + RENTAL_TABLE +
+                        " on " + RENTAL_TABLE + "." + ID_CODE1 + "=" + TABLE_CAR + "." + ID_CODE +
+                        " where " + RENTAL_TABLE + "." + ID_CODE1 + " is null";
+                resultSet = statement.executeQuery(printRemainders);
+                while (resultSet.next()) {
+                    System.out.println(resultSet.getString(ID_CODE) + " " + resultSet.getString(BRAND) + " " + resultSet.getString(MODEL) + " " +
+                            resultSet.getInt(SEAT_NUMBER) + " " + resultSet.getString(LICENSE_PLATE));
+
+                }
+                break;
             default:
                 System.out.println("Invalid option!");
 
