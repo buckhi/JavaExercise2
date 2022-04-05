@@ -35,6 +35,8 @@ public class Main extends DataSource {
                 "5. Add new rental of vehicle\n" +
                 "6. Export all rental vehicles in CSV file\n" +
                 "7. Import new vehicles from CSV file to database\n" +
+                "8. Print available vehicle to rent\n" +
+
                 "Enter your choice: ");
 
         int choice = scanner.nextInt();
